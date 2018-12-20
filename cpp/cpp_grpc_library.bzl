@@ -17,7 +17,7 @@ def cpp_grpc_library(**kwargs):
         name = name,
         srcs = [name_pb],
         deps = [
-            "//:protobuf_clib",
+            "@com_google_protobuf//:protoc_lib",
             "@com_github_grpc_grpc//:grpc++",
             "@com_github_grpc_grpc//:grpc++_reflection",
         ],

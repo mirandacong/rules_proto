@@ -1,5 +1,4 @@
 load("//python:python_proto_compile.bzl", "python_proto_compile")
-load("@protobuf_py_deps//:requirements.bzl", protobuf_requirements = "all_requirements")
 
 def python_proto_library(**kwargs):
     name = kwargs.get("name")
@@ -19,8 +18,7 @@ def python_proto_library(**kwargs):
     native.py_library(
         name = name,
         srcs = [name_pb],
-        deps = protobuf_requirements,
-        # This magically adds REPOSITORY_NAME/PACKAGE_NAME/{name_pb} to PYTHONPATH
+        deps = ['@com_google_protobuf//:protobuf_python'],
         imports = [name_pb],
         visibility = visibility,
     )
