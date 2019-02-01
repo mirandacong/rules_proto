@@ -125,14 +125,10 @@ def closure_proto_library(**kwargs):
         visibility = visibility,
         internal_descriptors = [name_pb + "/descriptor.source.bin"],
         lenient = True,
-        suppress = [
-            "JSC_WRONG_ARGUMENT_COUNT",
-        ],
     )
     name = kwargs.get("name")
     deps = kwargs.get("deps")
     visibility = kwargs.get("visibility")
-
 ```
 
 ### Mandatory Attributes
@@ -154,3 +150,4 @@ def closure_proto_library(**kwargs):
 | include_imports   | `bool` | `True`    | Pass the --include_imports argument to the protoc_plugin          |
 | include_source_info   | `bool` | `True`    | Pass the --include_source_info argument to the protoc_plugin          |
 | transitive   | `bool` | `False`    | Generated outputs for *.proto directly named in `deps` AND all transitive proto_library dependencies          |
+

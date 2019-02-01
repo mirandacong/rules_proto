@@ -1,14 +1,18 @@
-load("//:deps.bzl",
+load(
+    "//:deps.bzl",
     "bazel_gazelle",
     "bazel_skylib",
-    "org_pubref_rules_node",
     "build_bazel_rules_nodejs",
     "build_bazel_rules_typescript",
     "com_google_protobuf",
-    "io_bazel_rules_closure",
     "io_bazel_rules_go",
     "io_bazel_rules_webtesting",
+    "org_pubref_rules_node",
     "ts_protoc_gen",
+)
+load(
+    "//closure:deps.bzl",
+    "io_bazel_rules_closure",
 )
 
 def ts_proto_compile(**kwargs):
